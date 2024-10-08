@@ -1,16 +1,16 @@
 <template>
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>Inicio sesion</h2>
         <form @submit.prevent="handleLogin">
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email">Correo electronico:</label>
                 <input type="email" v-model="email" id="email" required />
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="password">Contraseña:</label>
                 <input type="password" v-model="password" id="password" required />
             </div>
-            <button type="submit">Login</button>
+            <button type="submit">Iniciar sesion</button>
         </form>
     </div>
 </template>

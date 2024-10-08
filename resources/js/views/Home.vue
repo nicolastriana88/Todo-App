@@ -1,7 +1,7 @@
 <template>
     <div>
-      <h1>Home</h1>
-      <p>Welcome to the ToDo App</p>
+      <h1>Bienvenido a la aplicación de tareas Todo App.</h1>
+      <p>Invitado por favor registrese ó inicie sesion</p>
     </div>
   </template>
   
@@ -10,3 +10,12 @@
     name: 'Home',
   };
   </script>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+</style>

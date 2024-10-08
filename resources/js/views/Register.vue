@@ -1,20 +1,20 @@
 <template>
     <div class="register">
-        <h2>Register</h2>
+        <h2>Registrarse</h2>
         <form @submit.prevent="register">
             <div>
-                <label for="name">name:</label>
+                <label for="name">Nombres:</label>
                 <input type="text" v-model="name" id="name" required />
             </div>
             <div>
-                <label for="email">Email:</label>
+                <label for="email">Correo electronico:</label>
                 <input type="email" v-model="email" id="email" required />
             </div>
             <div>
-                <label for="password">Password:</label>
+                <label for="password">Contraseña:</label>
                 <input type="password" v-model="password" id="password" required />
             </div>
-            <button type="submit">Register</button>
+            <button type="submit">Registro</button>
         </form>
     </div>
 </template>
