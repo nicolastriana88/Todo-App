@@ -3,14 +3,15 @@
         <h2>Inicio sesion</h2>
         <form @submit.prevent="handleLogin">
             <div class="form-group">
-                <label for="email">Correo electronico:</label>
+                <label for="email">Correo electronico</label>
                 <input type="email" v-model="email" id="email" required />
             </div>
             <div class="form-group">
-                <label for="password">Contraseña:</label>
+                <label for="password">Contraseña</label>
                 <input type="password" v-model="password" id="password" required />
             </div>
             <button type="submit">Iniciar sesion</button>
+            <p>¿No tienes una cuenta? <router-link to="/register">Registrate.</router-link></p>
         </form>
     </div>
 </template>

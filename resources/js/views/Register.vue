@@ -3,18 +3,22 @@
         <h2>Registrarse</h2>
         <form @submit.prevent="register">
             <div>
-                <label for="name">Nombres:</label>
+                <label for="name">Nombres</label>
                 <input type="text" v-model="name" id="name" required />
             </div>
             <div>
-                <label for="email">Correo electronico:</label>
+                <label for="email">Correo electronico</label>
                 <input type="email" v-model="email" id="email" required />
             </div>
             <div>
-                <label for="password">Contraseña:</label>
+                <label for="password">Contraseña</label>
                 <input type="password" v-model="password" id="password" required />
+                <label for="password_confirmation">Confirmar contraseña</label>
+                <input type="password" v-model="password_confirmation" id="password_confirmation" required />
+                <small>La contraseña debe tener al menos 8 caracteres.</small>
             </div>
             <button type="submit">Registro</button>
+            <p>¿Ya tienes una cuenta? <router-link to="/login">Iniciar sesion.</router-link></p>
         </form>
     </div>
 </template>

@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    name: 'TodoList'
+    name: 'TaskList'
 };
 </script>
 
