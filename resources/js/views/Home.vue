@@ -1,5 +1,6 @@
 <template>
     <div>
+      <p>test 2</p>
       <h1>Bienvenido a la aplicación de tareas Todo App.</h1>
       <p>Invitado por favor registrese ó inicie sesion</p>
     </div>
