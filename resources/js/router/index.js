@@ -1,10 +1,11 @@
 // router/index.js
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';  // Aquí se importan las funciones createRouter y createWebHistory
 
-import Register from '../views/Register.vue';
-import Login from '../views/Login.vue';
-import Home from '../views/Home.vue';
-import Tasks from '../views/Tasks.vue';
+
+import Home from '../views/Home.vue';     // Aquí se importa el componente Home
+import Register from '../views/Register.vue';      // Aquí se importa el componente Register
+import Login from '../views/Login.vue';       // Aquí se importa el componente Login
+import Tasks from '../views/Tasks.vue';         // Aquí se importa el componente Tasks
 
 const routes = [
   { path: '/', component: Home },
