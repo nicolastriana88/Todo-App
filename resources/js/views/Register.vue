@@ -13,8 +13,6 @@
             <div>
                 <label for="password">Contraseña</label>
                 <input type="password" v-model="password" id="password" required />
-                <label for="password_confirmation">Confirmar contraseña</label>
-                <input type="password" v-model="password_confirmation" id="password_confirmation" required />
                 <small>La contraseña debe tener al menos 8 caracteres.</small>
             </div>
             <button type="submit">Registro</button>
@@ -37,8 +35,8 @@ export default {
   methods: {
     async register() {
       try {
-        const response = await axios.post('/api/register', {
-          name: this.username,
+        const response = await axios.post('http://localhost:8000/api/register', {
+          name: this.name,
             email: this.email,
           password: this.password,
         });

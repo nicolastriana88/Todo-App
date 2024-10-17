@@ -1,29 +1,33 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
-class RegisterController
+class RegisterController extends Controller
 {
-    public function register($data)
+    public function register(Request $request)
     {
-        $username = $data['name'];
-        $email = $data['email'];
-        $password = $data['password'];
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+        ]);
 
-        // Validar los datos
-        if (empty($name) || empty($password) || empty($email)) {
-            return ['status' => 'error', 'message' => 'Username and password are required'];
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
         }
 
-        // Crear un nuevo usuario
-        $user = new User();
-        $user->name = $name;
-        $user->email = $email;
-        $user->password = password_hash($password, PASSWORD_BCRYPT);
-        $user->save();
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-        return ['status' => 'success', 'message' => 'User registered successfully'];
+        return response()->json(['message' => 'Usuario registrado exitosamente'], 201);
     }
 }
