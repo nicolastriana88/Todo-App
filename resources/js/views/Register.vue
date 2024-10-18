@@ -1,5 +1,6 @@
 <template>
-    <div class="register">
+
+<div class="register">
         <h2>Registrarse</h2>
         <form @submit.prevent="register">
             <div>
@@ -18,35 +19,28 @@
             <button type="submit">Registro</button>
             <p>¿Ya tienes una cuenta? <router-link to="/login">Iniciar sesion.</router-link></p>
         </form>
-    </div>
+    </div>  
+
 </template>
 
 <script>
 import axios from 'axios';
 
-export default {
-  data() {
-    return {
-      name: '',
-      email: '',
-      password: '',
-    };
-  },
-  methods: {
-    async register() {
-      try {
+register() {
+    try {
         const response = await axios.post('http://localhost:8000/api/register', {
-          name: this.name,
+            name: this.name,
             email: this.email,
-          password: this.password,
+            password: this.password
         });
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    },
-  },
+        console.log('Respuesta:', response.data);
+    } catch (error) {
+        console.error('Error durante el registro:', error);
+    }
+}
+}
 };
+
 </script>
 
 <style scoped>

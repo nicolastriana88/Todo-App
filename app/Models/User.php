@@ -14,7 +14,7 @@ class User
     public function save()
     {
         $db = static::getDB();
-        $stmt = $db->prepare('INSERT INTO users (name, password) VALUES (:name, :password)');
+        $stmt = $db->prepare('INSERT INTO users (name, password, email) VALUES (:name, :password, :email)');
         $stmt->bindParam(':name', $this->name);
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':password', $this->password);

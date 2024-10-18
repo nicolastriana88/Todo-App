@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisterController;
 
-Route::middleware([])->post('/register', [RegisterController::class, 'register']);
+Route::get('/probarcon', function () {
+    return response()->json(['message' => 'Conexión exitosa'], 200);
+});
