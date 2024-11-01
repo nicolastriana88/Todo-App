@@ -26,20 +26,30 @@
 <script>
 import axios from 'axios';
 
-register() {
-    try {
-        const response = await axios.post('http://localhost:8000/api/register', {
-            name: this.name,
-            email: this.email,
-            password: this.password
-        });
-        console.log('Respuesta:', response.data);
-    } catch (error) {
-        console.error('Error durante el registro:', error);
+export default {
+    data() {
+        return {
+            name: '',
+            email: '',
+            password: ''
+        };
+    },
+    methods: {
+        async register() {
+            try {
+                const response = await axios.post('http://localhost:8000/api/register', {
+                    name: this.name,
+                    email: this.email,
+                    password: this.password
+                });
+                console.log('Respuesta:', response.data);
+            } catch (error) {
+                console.error('Error durante el registro:', error);
+            }
+        }
     }
 }
-}
-};
+
 
 </script>
 
